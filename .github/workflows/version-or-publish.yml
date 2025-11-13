@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:  
+  contents: write  # Includes read, needed for checkout, creating tags/releases, pushing commits
+  pull-requests: write  # For creating and updating PRs
+
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
